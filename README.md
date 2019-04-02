@@ -1,24 +1,37 @@
-# README
+# TimeRecordアプリ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 目的
 
-Things you may want to cover:
+スキル習得・向上のためのモチベーションアップ
 
-* Ruby version
+## 概要
 
-* System dependencies
+スキル習得・向上のために費やした時間の記録と共有ができるアプリ
 
-* Configuration
 
-* Database creation
+## 使い方
 
-* Database initialization
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
+その後、次のコマンドで必要になる RubyGems をインストールします。
 
-* How to run the test suite
+```
+$ bundle install --without production
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+その後、データベースへのマイグレーションを実行します。
 
-* Deployment instructions
+```
+$ rails db:migrate
+```
 
-* ...
+最後に、テストを実行してうまく動いているかどうか確認してください。
+
+```
+$ rails test
+```
+
+テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
+
+```
+$ rails server
+```
