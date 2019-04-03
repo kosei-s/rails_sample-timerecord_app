@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/skill', to: 'skills#new'
   patch '/skill', to: 'skills#add'
+  patch '/skilldel', to: 'skills#destroy'
   resources :users
   resources :skills
 end

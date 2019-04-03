@@ -18,6 +18,8 @@ class SkillsController < ApplicationController
   end
 
   def destroy
+    Skill.find(params[:skill][:id]).destroy
+    redirect_to current_user
   end
 
   # 時間追加

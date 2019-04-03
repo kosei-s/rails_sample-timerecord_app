@@ -8,5 +8,10 @@
       <%= f.submit "追加", class: "btn" %>
     <% end %>
   </span>
-  <span class="skills">削除</span>
+  <span class="skills">
+    <%= form_for(skill, url: skilldel_path) do |f| %>
+      <%= f.hidden_field :id %>
+      <%= f.submit "削除", class: "btn" %>
+    <% end %>
+  </span>
 </li>
