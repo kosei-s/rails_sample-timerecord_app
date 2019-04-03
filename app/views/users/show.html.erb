@@ -5,13 +5,14 @@
       <h1>
         <%= @user.name %>
       </h1>
+      <%= link_to "スキル登録", skillrgst_path, class: "btn btn-lg" %>
     </section>
   </aside>
+  <div class="col-md-8">
+    <% if @user.skills.any? %>
+      <ul class="skills">
+        <%= render @skills %>
+      </ul>
+    <% end %>
+  </div>
 </div>
-<table>
-  <tr>
-    <th>スキル</th>
-    <th>累計時間</th>
-    <th>追加</th>
-  </tr>
-</table>
