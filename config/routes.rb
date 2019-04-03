@@ -5,8 +5,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  get '/skillrgst', to: 'skills#new'
-  post '/skillrgst', to: 'skills#create'
+  get '/skill', to: 'skills#new'
+  patch '/skill', to: 'skills#add'
   resources :users
   resources :skills
 end

@@ -5,7 +5,7 @@
       <h1>
         <%= @user.name %>
       </h1>
-      <%= link_to "スキル登録", skillrgst_path, class: "btn btn-lg" %>
+      <%= link_to "スキル登録", skill_path, class: "btn btn-lg" %>
     </section>
   </aside>
   <div class="col-md-8">
@@ -13,6 +13,8 @@
       <ul class="skills">
         <%= render @skills %>
       </ul>
+    <% else %>
+      <p>習得したいスキルを登録してください</p>
     <% end %>
   </div>
 </div>

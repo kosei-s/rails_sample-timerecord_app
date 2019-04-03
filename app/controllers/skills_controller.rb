@@ -12,11 +12,20 @@ class SkillsController < ApplicationController
       flash[:success] = "Skill added!"
       redirect_to current_user
     else
+      flash[:danger] = "失敗しました。"
       render 'static_pages/home'
     end
   end
 
   def destroy
+  end
+
+  # 時間追加
+  def add
+    @skill = Skill.find(params[:skill][:id])
+    updated_total = @skill.total + params[:skill][:total].to_i
+    @skill.update_attribute(:total, updated_total)
+    redirect_to current_user
   end
 
   private

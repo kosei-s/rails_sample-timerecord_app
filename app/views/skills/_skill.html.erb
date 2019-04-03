@@ -1,6 +1,12 @@
 <li id="skill-<%= skill.id %>">
   <span class="skills"><%= skill.name %></span>
   <span class="skills"><%= skill.total %></span>
-  <span class="skills">追加</span>
+  <span class="skills">
+    <%= form_for(skill, url: skill_path) do |f| %>
+      <%= f.hidden_field :id %>
+      <%= f.number_field :total, value: 0 %>
+      <%= f.submit "追加", class: "btn" %>
+    <% end %>
+  </span>
   <span class="skills">削除</span>
 </li>
