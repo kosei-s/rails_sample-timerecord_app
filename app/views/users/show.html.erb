@@ -1,6 +1,6 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="col-md-4">
+  <aside class="col-md-3">
     <section class="user_info">
       <h1>
         <%= @user.name %>
@@ -8,13 +8,15 @@
       <%= link_to "スキル登録", skill_path, class: "btn btn-lg" %>
     </section>
   </aside>
-  <div class="col-md-8">
-    <% if @user.skills.any? %>
-      <ul class="skills">
-        <%= render @skills %>
-      </ul>
-    <% else %>
-      <p>習得したいスキルを登録してください</p>
-    <% end %>
+  <div class="col-md-9">
+    <section class="skills">
+      <% if @user.skills.any? %>
+        <ul class="skills">
+          <%= render @skills %>
+        </ul>
+      <% else %>
+        <p>習得したいスキルを登録してください</p>
+      <% end %>
+    </section>
   </div>
 </div>

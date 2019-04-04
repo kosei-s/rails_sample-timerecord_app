@@ -1,17 +1,17 @@
 <li id="skill-<%= skill.id %>">
-  <span class="skills"><%= skill.name %></span>
-  <span class="skills"><%= skill.total %></span>
+  <span class="skills">スキル：<b><%= skill.name %></b>,</span>
+  <span class="skills">総取組時間：<%= skill.total %>時間,</span>
   <span class="skills">
     <%= form_for(skill, url: skill_path) do |f| %>
       <%= f.hidden_field :id %>
-      <%= f.number_field :total, value: 0 %>
-      <%= f.submit "追加", class: "btn" %>
+      追加：<%= f.number_field :total, value: 0 %>時間
+      <%= f.submit "プラス", class: "btn btn-default btn-xs" %> ,
     <% end %>
   </span>
   <span class="skills">
     <%= form_for(skill, url: skilldel_path) do |f| %>
       <%= f.hidden_field :id %>
-      <%= f.submit "削除", class: "btn" %>
+      <%= f.submit "削除", class: "btn btn-default btn-xs" %>
     <% end %>
   </span>
 </li>
